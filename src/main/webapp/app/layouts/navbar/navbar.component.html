@@ -4,7 +4,6 @@
             <fa-icon [icon]="'bars'"></fa-icon>
         </a>
         <a class="navbar-brand logo float-left" routerLink="/" (click)="collapseNavbar()">
-            <span class="logo-img"></span>
             <span class="navbar-title">Todoapp</span> <span class="navbar-version">{{version}}</span>
         </a>
     </div>
@@ -15,6 +14,14 @@
                     <span>
                         <fa-icon [icon]="'home'"></fa-icon>
                         <span>Home</span>
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" routerLink="calendar" (click)="collapseNavbar()">
+                    <span>
+                        <fa-icon [icon]="'calendar'"></fa-icon>
+                        <span>Calendar</span>
                     </span>
                 </a>
             </li>
@@ -29,6 +36,12 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a class="dropdown-item" routerLink="activity" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'asterisk'" [fixedWidth]="true"></fa-icon>
+                            <span>Activity</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>

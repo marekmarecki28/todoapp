@@ -18,6 +18,9 @@ import { TodoappAccountModule } from './account/account.module';
 import { TodoappEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule } from 'angular-calendar';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
     imports: [
@@ -28,10 +31,12 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         TodoappCoreModule,
         TodoappHomeModule,
         TodoappAccountModule,
-        TodoappEntityModule
+        TodoappEntityModule,
+        BrowserAnimationsModule,
+        CalendarModule.forRoot()
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
+    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, CalendarComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
