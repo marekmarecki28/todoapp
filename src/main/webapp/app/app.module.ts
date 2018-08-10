@@ -20,6 +20,7 @@ import { TodoappEntityModule } from './entities/entity.module';
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
 import { CalendarModule } from 'angular-calendar';
 import { CalendarComponent } from './calendar/calendar.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap/modal/modal.module';
 
 @NgModule({
     imports: [
@@ -31,7 +32,8 @@ import { CalendarComponent } from './calendar/calendar.component';
         TodoappHomeModule,
         TodoappAccountModule,
         TodoappEntityModule,
-        CalendarModule.forRoot()
+        CalendarModule.forRoot(),
+        NgbModalModule.forRoot()
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, CalendarComponent],
@@ -61,6 +63,7 @@ import { CalendarComponent } from './calendar/calendar.component';
             deps: [Injector]
         }
     ],
-    bootstrap: [JhiMainComponent]
+    bootstrap: [JhiMainComponent],
+    exports: [CalendarComponent]
 })
 export class TodoappAppModule {}
